@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Instagram Profile Detection</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav>
+    <div class="logo">AI Profile Detector</div>
+
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/detection">Detection</a></li>
+        <li><a href="/history">History</a></li>
+    </ul>
+</nav>
+
+<section class="detect-section">
+
+    <div class="detect-box">
+
+        <h1>Instagram Profile Detection</h1>
+
+        <form method="POST">
+
+            <input type="text"
+                   name="username"
+                   placeholder="Instagram Username"
+                   required>
+
+            <input type="text"
+                   name="insta_id"
+                   placeholder="Instagram ID"
+                   required>
+
+            <input type="number"
+                   name="followers"
+                   placeholder="Followers"
+                   required>
+
+            <input type="number"
+                   name="following"
+                   placeholder="Following"
+                   required>
+
+            <input type="number"
+                   name="posts"
+                   placeholder="Posts"
+                   required>
+
+            <input type="number"
+                   name="bio"
+                   placeholder="Bio Length"
+                   required>
+
+            <button type="submit">
+                Detect Profile
+            </button>
+
+        </form>
+
+        {% if result %}
+
+        <div class="result-card">
+
+            <h2>Detection Result</h2>
+
+            <p>{{ result }}</p>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+</body>
+</html>
